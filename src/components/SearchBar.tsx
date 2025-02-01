@@ -13,7 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
 import { soundData } from "@/data/sound-mappings";
-import { SoundMapping } from "@/types/korean-malayalam";
+import { SoundMapping, SoundCategory } from "@/types/korean-malayalam";
 import {
   Dialog,
   DialogContent,
@@ -53,6 +53,11 @@ function getAllSounds() {
   });
 
   return sounds;
+}
+
+// Add type guard
+function isSoundCategory(data: any): data is SoundCategory {
+  return "title" in data && "sounds" in data;
 }
 
 export function SearchBar() {
@@ -98,16 +103,51 @@ export function SearchBar() {
           <CommandEmpty>No results found.</CommandEmpty>
           {Object.entries(soundData).map(([section, data]) => {
             if (section === "consonants") {
-              return Object.entries(data).map(([type, category]) => (
-                <CommandGroup key={type} heading={category.title}>
-                  {category.sounds.map((sound) => (
+              return Object.entries(data).map(
+                ([type, category]: [string, SoundCategory]) => (
+                  <CommandGroup key={type} heading={category.title}>
+                    {category.sounds.map((sound: SoundMapping) => (
+                      <CommandItem
+                        key={sound.korean}
+                        value={`${sound.korean} ${sound.romanization} ${sound.malayalamEquivalent} ${sound.koreanExample.word} ${sound.malayalamExample.word}`}
+                        onSelect={() => {
+                          setSelectedSound({
+                            sound,
+                            category: type as CategoryType,
+                          });
+                          setOpen(false);
+                        }}
+                      >
+                        <div className="flex items-center gap-2">
+                          <span className="text-lg font-bold">
+                            {sound.korean}
+                          </span>
+                          <span className="text-muted-foreground">
+                            {sound.romanization}
+                          </span>
+                          <span className="text-lg">
+                            {sound.malayalamEquivalent}
+                          </span>
+                        </div>
+                      </CommandItem>
+                    ))}
+                  </CommandGroup>
+                )
+              );
+            }
+
+            // Use type guard for non-consonant sections
+            if (isSoundCategory(data)) {
+              return (
+                <CommandGroup key={section} heading={data.title}>
+                  {data.sounds.map((sound: SoundMapping) => (
                     <CommandItem
                       key={sound.korean}
                       value={`${sound.korean} ${sound.romanization} ${sound.malayalamEquivalent} ${sound.koreanExample.word} ${sound.malayalamExample.word}`}
                       onSelect={() => {
                         setSelectedSound({
                           sound,
-                          category: type as CategoryType,
+                          category: section as CategoryType,
                         });
                         setOpen(false);
                       }}
@@ -126,36 +166,10 @@ export function SearchBar() {
                     </CommandItem>
                   ))}
                 </CommandGroup>
-              ));
+              );
             }
 
-            return (
-              <CommandGroup key={section} heading={data.title}>
-                {data.sounds.map((sound) => (
-                  <CommandItem
-                    key={sound.korean}
-                    value={`${sound.korean} ${sound.romanization} ${sound.malayalamEquivalent} ${sound.koreanExample.word} ${sound.malayalamExample.word}`}
-                    onSelect={() => {
-                      setSelectedSound({
-                        sound,
-                        category: section as CategoryType,
-                      });
-                      setOpen(false);
-                    }}
-                  >
-                    <div className="flex items-center gap-2">
-                      <span className="text-lg font-bold">{sound.korean}</span>
-                      <span className="text-muted-foreground">
-                        {sound.romanization}
-                      </span>
-                      <span className="text-lg">
-                        {sound.malayalamEquivalent}
-                      </span>
-                    </div>
-                  </CommandItem>
-                ))}
-              </CommandGroup>
-            );
+            return null;
           })}
         </CommandList>
       </CommandDialog>

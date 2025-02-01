@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ഗേകുറി 타왈라 (Gekuri Tawalla)
+
+A playful guide to learning Korean sounds through Malayalam equivalents. This web application helps Malayalam speakers learn Korean pronunciation by mapping Korean sounds to their closest Malayalam equivalents.
+
+## Features
+
+- 🔤 Interactive sound cards with Korean-Malayalam mappings
+- 🎯 Practice mode with customizable difficulty
+- 🔍 Quick search with keyboard shortcuts (⌘K)
+- 🌙 Dark/Light mode support
+- ⌨️ Keyboard navigation
+- ⭐ Favorite sounds for quick access
+- 🔊 Audio pronunciation (using browser's speech synthesis)
+- 📱 Fully responsive design
+
+## Tech Stack
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- shadcn/ui
+- Radix UI
+- Lucide Icons
+- next-themes
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/yourusername/gekuri-tawalla.git
+cd gekuri-tawalla
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+pnpm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Start the development server:
 
-## Learn More
+```bash
+pnpm dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Keyboard Shortcuts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `V` - Switch to Vowels tab
+- `D` - Switch to Double Vowels tab
+- `C` - Switch to Consonants tab
+- `F` - Switch to Favorites tab
+- `P` - Start Practice mode
+- `⌘K` - Open search
+- `?` - Show help
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+MIT License - feel free to use this project for learning or teaching purposes.
+
+## Credits
+
+- Built by Hrishi with Claude 3.5 Sonnet
+- Korean-Malayalam sound mappings curated with help from language experts
+- UI components from [shadcn/ui](https://ui.shadcn.com)
+
+## Contact
+
+For questions or suggestions, please open an issue or reach out to [your contact info].

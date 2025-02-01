@@ -2,7 +2,7 @@
 
 import { SoundCategory } from "@/types/korean-malayalam";
 import { Card } from "@/components/ui/card";
-import { SoundCard } from "@/components/SoundCard";
+import { SoundCard } from "./SoundCard";
 import { categoryColors } from "@/lib/categoryColors";
 
 interface SoundCategorySectionProps {

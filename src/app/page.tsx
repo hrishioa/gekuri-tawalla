@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { SoundCategorySection } from "@/components/SoundCategorySection";
+import { SoundCategorySection } from "../components/SoundCategorySection";
 import { SearchBar } from "@/components/SearchBar";
 import { PracticeMode } from "@/components/PracticeMode";
 import { Card } from "@/components/ui/card";
@@ -37,16 +37,15 @@ export default function Home() {
               <div>
                 <div className="space-y-1">
                   <h1 className="text-3xl sm:text-4xl font-bold tracking-tight bg-gradient-to-r from-blue-500 via-violet-500 to-orange-500 bg-clip-text text-transparent">
-                    Hangeul Harmony
+                    ഗേകുറി 타왈라
                   </h1>
+                  <p className="text-lg font-medium text-muted-foreground">
+                    A Froggy Guide to Korean-Malayalam Sounds
+                  </p>
                   <p className="text-xs sm:text-sm text-muted-foreground">
                     Made by Hrishi and Claude 3.5 Sonnet
                   </p>
                 </div>
-                <p className="text-sm sm:text-base text-muted-foreground mt-2">
-                  Learn Korean sounds through Malayalam equivalents with an
-                  intuitive sound mapping guide
-                </p>
               </div>
               <div className="flex items-center gap-2">
                 <SearchBar />
