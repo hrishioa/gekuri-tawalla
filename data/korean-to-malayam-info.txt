@@ -1,0 +1,352 @@
+Below is a guide that lists each Korean “jamo” (letter) with its standard romanization together with a suggested “closest‐approximation” in Malayalam. Keep in mind that the two languages have different phonemic inventories and writing systems, so the Malayalam letters shown here are only approximate; in several cases there is no perfect equivalent. In what follows, each entry gives:
+
+- **Korean Letter & Sound (romanization)**
+- **Closest Malayalam equivalent** (using the corresponding vowel or consonant letter or a geminated form when needed)
+- **A Korean example word** (with its meaning)
+- **A Malayalam example word** that features the approximate sound (with its meaning)
+- **English translation** of the example
+
+Some of the vowels (especially the “gliding” vowels such as ㅕ and ㅢ) have no true equivalent in Malayalam; in those cases a notional approximation is offered and noted.
+
+---
+
+## I. Vowels
+
+1. **ㅏ – “a”**  
+   - **Malayalam equivalent:** അ  
+   - **Korean example:** 아빠  
+     *(“appa” – “dad”)*  
+   - **Malayalam example:** അച്ഛൻ  
+     *(“achchan” – “father”)*  
+   - **English:** “dad/father”  
+   &nbsp;  
+2. **ㅑ – “ya”**  
+   - **Malayalam approximation:** യാ  
+     > (Malayalam does not use an independent “ya” vowel; here we show the consonant യ with the long vowel sign, to give a [ya] sound.)  
+   - **Korean example:** 야  
+     *(An informal exclamation “hey!”)*  
+   - **Malayalam example:** യാത്ര  
+     *(“yaathra” – “journey”; note the initial “ya” sound)*  
+   - **English:** “hey” / “journey”  
+   &nbsp;  
+3. **ㅓ – “eo”**  
+   - **Malayalam approximation:** While Korean ㅓ is pronounced like the open-mid vowel [ʌ] (as in “cup”), Malayalam does not have an exact match. Often the short “o” (ഒ) is used as a rough stand‑in.  
+   - **Korean example:** 어른  
+     *(“eoreun” – “adult”)*  
+   - **Malayalam example:** ഒരാൾ  
+     *(“oraal” – “a person”)*  
+   - **English:** “adult” / “one (person)”  
+   &nbsp;  
+4. **ㅕ – “yeo”**  
+   - **Malayalam approximation:** There is no true equivalent. One might indicate the glide with a combination such as യൊ (a not‐standard combo) to signal “yeo.”  
+   - **Korean example:** 여자  
+     *(“yeoja” – “woman”)*  
+   - **Malayalam example:** No common word begins with an exact “yeo” sound; one must approximate using a “y”–initial syllable (for example, യേശു “Yeshu” begins with “ye,” though not “yeo”).  
+   - **English:** “woman”  
+   &nbsp;  
+5. **ㅗ – “o”**  
+   - **Malayalam equivalent:** Generally ഒ (for a short “o”) or ഓ (for a long “o”)  
+   - **Korean example:** 오리  
+     *(“ori” – “duck”)*  
+   - **Malayalam example:** ഒന്ന്  
+     *(“onnu” – “one”)*  
+   - **English:** “duck” / “one”  
+   &nbsp;  
+6. **ㅛ – “yo”**  
+   - **Malayalam equivalent:** യോഗ (using the vowel sign for “o”) gives **യോ** for a [yo] sound  
+   - **Korean example:** 요리  
+     *(“yori” – “cooking” or “food”)*  
+   - **Malayalam example:** യോഗ  
+     *(“yoga” – a Sanskrit‐derived word used in Malayalam)*  
+   - **English:** “food” / “yoga”  
+   &nbsp;  
+7. **ㅜ – “u”**  
+   - **Malayalam equivalent:** ഉ  
+   - **Korean example:** 우유  
+     *(“uyu” – “milk”)*  
+   - **Malayalam example:** ഉപ്പ്  
+     *(“uppu” – “salt”)*  
+   - **English:** “milk” / “salt”  
+   &nbsp;  
+8. **ㅠ – “yu”**  
+   - **Malayalam equivalent:** Typically approximated by using the letter for “ya” with the vowel ഉ, i.e. യൂ  
+   - **Korean example:** 유리  
+     *(“yuri” – “glass”)*  
+   - **Malayalam example:** യുവാവ്  
+     *(“yuvāv” – “young man”)*  
+   - **English:** “glass” / “young”  
+   &nbsp;  
+9. **ㅡ – “eu”**  
+   - **Malayalam note:** This sound is a close central unrounded vowel ([ɯ]) with no true counterpart in Malayalam. It is sometimes approximated by a “neutral” vowel sound; one may have to note it as a special case.  
+   - **Korean example:** 음악  
+     *(“eumak” – “music”)*  
+   - **Malayalam example:** No exact equivalent; the inherent vowel in Malayalam (which may sound like a short “a” or schwa) is used instead.  
+   - **English:** “music”  
+   &nbsp;  
+10. **ㅣ – “i”**  
+    - **Malayalam equivalent:** ഇ  
+    - **Korean example:** 이름  
+      *(“ireum” – “name”)*  
+    - **Malayalam example:** ഇടം  
+      *(“idam” – “place” or “gap”)*  
+    - **English:** “name” / “place”  
+    &nbsp;  
+11. **ㅐ – “ae”**  
+    - **Malayalam approximation:** The sound (as in “cat”) has no perfect equivalent. Often the vowel എ (or occasionally a diphthongal rendition) is used as an approximation.  
+    - **Korean example:** 애인  
+      *(“aein” – “lover”)*  
+    - **Malayalam example:** എനിക്ക്  
+      *(“enikku” – “to me”; note the initial “e” sound)*  
+    - **English:** “lover” / “me”  
+    &nbsp;  
+12. **ㅒ – “yae”**  
+    - **Malayalam approximation:** One may notate this as a combination such as യെ (a “ya” plus the vowel sound of എ) even though this is not standard in Malayalam.  
+    - **Korean example:** 얘  
+      *(“yae” – a colloquial term for “kid” or “this one”)*  
+    - **Malayalam example:** No common native word uses this exact glide; it remains an approximation.  
+    - **English:** “kid/this”  
+    &nbsp;  
+13. **ㅔ – “e”**  
+    - **Malayalam equivalent:** എ  
+    - **Korean example:** 세상  
+      *(“sesang” – “world”)*  
+    - **Malayalam example:** എല്ലാം  
+      *(“ellaam” – “all”)*  
+    - **English:** “world” / “all”  
+    &nbsp;  
+14. **ㅖ – “ye”**  
+    - **Malayalam equivalent:** Approximated by യേ  
+    - **Korean example:** 예술  
+      *(“yesul” – “art”)*  
+    - **Malayalam example:** യേശു  
+      *(“Yeshu” – “Jesus”, a common proper noun in Malayalam)*  
+    - **English:** “art” / “Jesus”  
+
+---
+
+## II. Double Vowels
+
+1. **ㅘ – “wa”**  
+   - **Malayalam note:** Korean “wa” is a combination of ㅗ + ㅏ. Malayalam does not have a distinct “w” sound; often the letter വ is used (which in Malayalam can represent both /v/ and, in loan contexts, /w/). A close approximation is writing വ + appropriate vowel sign, here envisioned as “വ” with an “a” quality.  
+   - **Korean example:** 과일  
+     *(“gwail” – “fruit”)*  
+   - **Malayalam example:** വാതില്‍  
+     *(“vaathil” – “door”)*  
+   - **English:** “fruit” / “door”  
+   &nbsp;  
+2. **ㅝ – “wo”**  
+   - **Malayalam note:** Similarly, ㅝ (pronounced roughly “wuh”) is approximated by using വ plus an appropriate vowel sign (for instance, one might write വോ even though the quality is not exact).  
+   - **Korean example:** 원  
+     *(“won” – the name of the Korean currency or “circle”)*  
+   - **Malayalam example:** There is no common native word beginning with a true “wo–” sound; one must use the approximate വോ in transliterations.  
+   - **English:** “won” / “circle”  
+   &nbsp;  
+3. **ㅙ – “wae”**  
+   - **Malayalam approximation:** One might approximate this by a compound such as വ + an “e” vowel sign (for example, writing it as വൈ in transliteration even though the exact quality differs).  
+   - **Korean example:** 왜  
+     *(“wae” – “why”)*  
+   - **Malayalam example:** While not exact, the word യാത്ര (yaathra) sometimes appears with a diphthongal quality; however, there is no standard native example.  
+   - **English:** “why”  
+   &nbsp;  
+4. **ㅞ – “we”**  
+   - **Malayalam approximation:** Often rendered with the consonant വ plus the vowel sign for “e” (വെ).  
+   - **Korean example:** 웨이터  
+     *(“weiteo” – “waiter”)*  
+   - **Malayalam example:** വെള്ളം  
+     *(“vellam” – “water”)*  
+   - **English:** “waiter” / “water”  
+   &nbsp;  
+5. **ㅚ – “oe”**  
+   - **Malayalam note:** Modern Korean ㅚ is typically pronounced very similarly to ㅙ or even ㅟ; there is no true equivalent in Malayalam. An approximation might be attempted by combining vowels (for example, ഒയ) but it is not standard.  
+   - **Korean example:** 외국  
+     *(“oeguk” – “foreign country”)*  
+   - **Malayalam example:** No common example; this sound is generally rendered by borrowing the nearest available vowels.  
+   - **English:** “foreign”  
+   &nbsp;  
+6. **ㅟ – “wi”**  
+   - **Malayalam approximation:** Often approximated by the consonant വ with the vowel sign for “i” (വി), even though the Korean “wi” begins with a “w” quality.  
+   - **Korean example:** 위  
+     *(“wi” – “above” or “top”)*  
+   - **Malayalam example:** വിഷു (Viṣu) is a proper name (of the deity), showing the “vi–” sound; also, various loanwords use വി to represent similar sounds.  
+   - **English:** “above”  
+   &nbsp;  
+7. **ㅢ – “ui”**  
+   - **Malayalam note:** This vowel—often pronounced like a diphthong “eui” or “ui”—has no true equivalent in Malayalam. It is usually rendered by a combination (for example, writing it as ഉയ്) but this is only a notational aid.  
+   - **Korean example:** 의자  
+     *(“uija” – “chair”)*  
+   - **Malayalam example:** No exact native equivalent exists.  
+   - **English:** “chair”  
+
+---
+
+## III. Consonants
+
+### A. Plain Consonants
+
+1. **ㄱ – “g” (or unaspirated “k”)**  
+   - **Malayalam equivalent:** Typically represented by ക  
+     > (Though the Korean sound lies between [g] and [k], in Malayalam the unaspirated velar stop is usually written with ക.)  
+   - **Korean example:** 가  
+     *(“ga” – used as a syllable or as the name of the song “가요”)*  
+   - **Malayalam example:** കമലം  
+     *(“kamalam” – “lotus”)*  
+   - **English:** “lotus”  
+   &nbsp;  
+2. **ㄷ – “d” (often a [t] sound in initial position)**  
+   - **Malayalam equivalent:** Often approximated by ദ  
+     > (Korean ㄷ is an unaspirated dental/alveolar stop; Malayalam ദ comes closest to the voiced equivalent.)  
+   - **Korean example:** 다리  
+     *(“dari” – “bridge” or “leg”)*  
+   - **Malayalam example:** ദർശനം  
+     *(“darshanam” – “sight” or “vision”)*  
+   - **English:** “bridge” / “vision”  
+   &nbsp;  
+3. **ㅈ – “j”**  
+   - **Malayalam equivalent:** ജ  
+   - **Korean example:** 자  
+     *(“ja” – meaning “sleep” in the verb 자다 “jada”)*  
+   - **Malayalam example:** ജലം  
+     *(“jalam” – “water” in Sanskrit-derived vocabulary)*  
+   - **English:** “sleep” / “water”  
+   &nbsp;  
+4. **ㅂ – “b” (or unaspirated “p”)**  
+   - **Malayalam equivalent:** ബ  
+   - **Korean example:** 바다  
+     *(“bada” – “sea”)*  
+   - **Malayalam example:** ബാലന്  
+     *(“baalan” – “child”)*  
+   - **English:** “sea” / “child”  
+   &nbsp;  
+5. **ㅇ – “ng” (as a final sound; silent when initial)**  
+   - **Malayalam equivalent:** For the final nasal, the letter ങ (nga) is used.  
+   - **Korean example:** 방  
+     *(“bang” – “room”)*  
+   - **Malayalam example:** In transliterations the nasal sound is rendered with ങ, for example in അങ്ങ് (aṅṅ – “there”)  
+   - **English:** “room”  
+   &nbsp;  
+6. **ㄴ – “n”**  
+   - **Malayalam equivalent:** ന  
+   - **Korean example:** 나  
+     *(“na” – “I” or “me”)*  
+   - **Malayalam example:** നട  
+     *(“nata” – “actor/performer”, or more simply, ന in many words)*  
+   - **English:** “I”  
+   &nbsp;  
+7. **ㅅ – “s”**  
+   - **Malayalam equivalent:** സ  
+   - **Korean example:** 사과  
+     *(“sagwa” – “apple”)*  
+   - **Malayalam example:** സർിത  
+     *(“sarita” – “river”; note that in Malayalam poetry and Sanskrit loans, സ is used for the “s” sound)*  
+   - **English:** “apple” / “river”  
+   &nbsp;  
+8. **ㅁ – “m”**  
+   - **Malayalam equivalent:** മ  
+   - **Korean example:** 마음  
+     *(“maeum” – “heart” or “mind”)*  
+   - **Malayalam example:** മരം  
+     *(“maram” – “tree”)*  
+   - **English:** “mind” / “tree”  
+   &nbsp;  
+9. **ㅎ – “h”**  
+   - **Malayalam equivalent:** ഹ  
+   - **Korean example:** 하늘  
+     *(“haneul” – “sky”)*  
+   - **Malayalam example:** ഹരി  
+     *(“Hari” – a common proper name invoking Lord Vishnu)*  
+   - **English:** “sky” / “Hari”  
+   &nbsp;  
+10. **ㄹ – “r/l”**  
+    - **Malayalam note:** Korean ㄹ is a flap that can sound like [r] or [l] depending on position. In Malayalam the lateral approximant is usually ല (la) or sometimes റ (ra) in a trilled quality.  
+    - **Korean example:** 라면  
+      *(“ramyeon” – “noodle soup/ramen”)*  
+    - **Malayalam example:** ലക്ഷ്യം  
+      *(“lakshyam” – “aim/goal”, using ല for the lateral sound)*  
+    - **English:** “ramen” / “goal”  
+
+---
+
+### B. Aspirated Consonants
+
+1. **ㅋ – “k” (aspirated)**  
+   - **Malayalam equivalent:** While Malayalam does not systematically distinguish aspiration, the aspirated sound is sometimes notated by using ഖ (the aspirated counterpart of ക).  
+   - **Korean example:** 카드  
+     *(“kadeu” – “card”)*  
+   - **Malayalam example:** ഖടകം  
+     *(“khaṭakam” – a word sometimes used in poetic contexts, roughly “thunder”)*  
+   - **English:** “card” / “thunder”  
+   &nbsp;  
+2. **ㅌ – “t” (aspirated)**  
+   - **Malayalam equivalent:** Aspirated [tʰ] is not a native phoneme in Malayalam; one typically uses ത for a plain [t].  
+   - **Korean example:** 타다  
+     *(“tada” – “to ride” or “to burn”)*  
+   - **Malayalam example:** While a distinct aspirated [t] is not marked, words like തപിക്കുക (tapikkuka – “to burn”) use the same consonant ത.  
+   - **English:** “ride” / “burn”  
+   &nbsp;  
+3. **ㅊ – “ch”**  
+   - **Malayalam equivalent:** ച  
+   - **Korean example:** 차  
+     *(“cha” – “tea” or “car”)*  
+   - **Malayalam example:** ചാടി  
+     *(“chaadi” – “jumped” or “to leap” in colloquial usage)*  
+   - **English:** “tea” / “jump”  
+   &nbsp;  
+4. **ㅍ – “p” (aspirated)**  
+   - **Malayalam equivalent:** പ  
+   - **Korean example:** 파도  
+     *(“pado” – “wave”)*  
+   - **Malayalam example:** പാല്  
+     *(“paal” – “milk”)*  
+   - **English:** “wave” / “milk”  
+
+---
+
+### C. Tense (Fortis) Consonants
+
+> These five are pronounced with extra muscular tension (sometimes written as “double” sounds). Malayalam does not have a built‑in set of tense stops; a common workaround in transliteration is to show them as geminated (doubled) consonants.
+
+1. **ㄲ – “kk”**  
+   - **Malayalam approximation:** Represented by a doubled ക (i.e. ക്ക)  
+   - **Korean example:** 까만  
+     *(“kkaman” – “black”)*  
+   - **Malayalam example:** In transliterations one might write a geminated “ക്ക” to indicate tension, though no standard native word uses a “tense” sound.  
+   - **English:** “black”  
+   &nbsp;  
+2. **ㄸ – “tt”**  
+   - **Malayalam approximation:** Represented by a doubled dental consonant (ട്ട)  
+   - **Korean example:** 따뜻하다  
+     *(“ttatteuthada” – “warm”)  
+   - **Malayalam example:** Gemination is indicated in loanwords; one might notate a tense sound as in examples like “പട്ട” (as in “leather”) though it is only an approximation.  
+   - **English:** “warm”  
+   &nbsp;  
+3. **ㅉ – “jj”**  
+   - **Malayalam approximation:** Represented by a doubled ജ (ജ്ജ)  
+   - **Korean example:** 짜다  
+     *(“jjada” – “salty”)*  
+   - **Malayalam example:** In transliteration one may show this as “ജ്ജ”, though native words rarely use a doubled ജ.  
+   - **English:** “salty”  
+   &nbsp;  
+4. **ㅃ – “pp”**  
+   - **Malayalam approximation:** Represented by a doubled ബ (ബ്ബ)  
+   - **Korean example:** 빨리  
+     *(“ppalli” – “quickly”)*  
+   - **Malayalam example:** Again, gemination is used only in transliteration; one might render a tense “p” as ബ്ബ in academic notation.  
+   - **English:** “quickly”  
+   &nbsp;  
+5. **ㅆ – “ss”**  
+   - **Malayalam approximation:** Represented by a doubled സ (സ്സ)  
+   - **Korean example:** 싸다  
+     *(“ssada” – “cheap”)*  
+   - **Malayalam example:** In transliterated text a tense “s” might be shown as “സ്സ”.  
+   - **English:** “cheap”  
+
+---
+
+### Final Notes
+
+- **Approximation Caveat:**  
+  Because Korean and Malayalam evolved in very different linguistic environments, many Korean sounds (especially the centralized vowel ㅡ, the gliding vowels ㅕ/ㅒ/ㅢ, and the tense stops) have no one‑to‑one equivalent in Malayalam. The representations above use the nearest available letters or common transliteration practices.  
+- **Usage Examples:**  
+  The example words are chosen to illustrate the sound in each language; they are not meant to be “translations” of one another but rather to show how the same sound (or its closest approximation) is represented and used in Korean and Malayalam.  
+
+We hope this guide helps you see how the Korean letters (jamo) might be rendered using Malayalam’s script and sound–values.
