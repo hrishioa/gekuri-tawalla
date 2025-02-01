@@ -1,18 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SoundCategorySection } from "@/components/SoundCategorySection";
 import { ViewToggle } from "@/components/ViewToggle";
 import { soundData } from "@/data/sound-mappings";
 import { SearchBar } from "@/components/SearchBar";
 import { PracticeMode } from "@/components/PracticeMode";
+import { Card } from "@/components/ui/card";
+import { SoundCard } from "@/components/SoundCard";
+import { Star } from "lucide-react";
+import { ThemeToggle } from "@/components/ThemeToggle";
+import { KeyboardShortcuts } from "@/components/KeyboardShortcuts";
+import { HelpButton } from "@/components/HelpButton";
 
 export default function Home() {
   const [isGridView, setIsGridView] = useState(true);
+  const [favorites, setFavorites] = useState<SoundMapping[]>([]);
+
+  useEffect(() => {
+    const savedFavorites = JSON.parse(
+      localStorage.getItem("favorites") || "[]"
+    );
+    setFavorites(savedFavorites);
+  }, []);
 
   return (
     <div className="min-h-screen bg-muted/50">
+      <KeyboardShortcuts />
       <header className="border-b bg-background">
         <div className="container px-4 py-8">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
@@ -28,6 +43,8 @@ export default function Home() {
             <div className="flex items-center gap-2">
               <SearchBar />
               <PracticeMode />
+              <ThemeToggle />
+              <HelpButton />
               <ViewToggle isGridView={isGridView} onToggle={setIsGridView} />
             </div>
           </div>
@@ -48,6 +65,12 @@ export default function Home() {
                 <TabsTrigger value="consonants" className="text-base">
                   Consonants
                 </TabsTrigger>
+                {favorites.length > 0 && (
+                  <TabsTrigger value="favorites" className="text-base gap-2">
+                    <Star className="h-4 w-4" />
+                    Favorites
+                  </TabsTrigger>
+                )}
               </TabsList>
             </div>
           </div>
@@ -84,6 +107,34 @@ export default function Home() {
               categoryType="tense"
               isGridView={isGridView}
             />
+          </TabsContent>
+
+          <TabsContent value="favorites" className="mt-8">
+            <Card className="p-6">
+              <div className="mb-6">
+                <h2 className="text-2xl font-bold tracking-tight">Favorites</h2>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Your saved Korean sounds
+                </p>
+              </div>
+
+              <div
+                className={
+                  isGridView
+                    ? "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3"
+                    : "space-y-2"
+                }
+              >
+                {favorites.map((sound) => (
+                  <SoundCard
+                    key={sound.korean}
+                    sound={sound}
+                    category="vowels"
+                    isCompact={!isGridView}
+                  />
+                ))}
+              </div>
+            </Card>
           </TabsContent>
         </Tabs>
       </main>

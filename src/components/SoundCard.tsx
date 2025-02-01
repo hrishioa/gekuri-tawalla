@@ -13,7 +13,9 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Volume2 } from "lucide-react";
+import { Volume2, Share2 } from "lucide-react";
+import { toast } from "sonner";
+import { FavoriteButton } from "./FavoriteButton";
 
 const categoryColors = {
   vowels:
@@ -47,6 +49,23 @@ export function SoundCard({ sound, category, isCompact }: SoundCardProps) {
     }
   };
 
+  const shareSound = async () => {
+    const shareText = `Learn Korean-Malayalam: "${sound.korean}" (${sound.romanization}) maps to "${sound.malayalamEquivalent}" in Malayalam.`;
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          text: shareText,
+        });
+      } catch (err) {
+        console.error("Error sharing:", err);
+      }
+    } else {
+      await navigator.clipboard.writeText(shareText);
+      toast.success("Copied to clipboard!");
+    }
+  };
+
   if (isCompact) {
     return (
       <Card
@@ -63,6 +82,7 @@ export function SoundCard({ sound, category, isCompact }: SoundCardProps) {
         <div
           className={`absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r ${categoryColors[category]}`}
         />
+        <FavoriteButton sound={sound} />
       </Card>
     );
   }
@@ -84,11 +104,32 @@ export function SoundCard({ sound, category, isCompact }: SoundCardProps) {
         <div
           className={`absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r ${categoryColors[category]}`}
         />
+        <FavoriteButton sound={sound} />
       </Card>
 
       <Dialog open={showDetails} onOpenChange={setShowDetails}>
         <DialogContent className="sm:max-w-[500px]">
-          <DialogHeader>
+          <div className="flex justify-end gap-2 absolute right-4 top-4">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={(e) => {
+                e.stopPropagation();
+                shareSound();
+              }}
+            >
+              <Share2 className="h-4 w-4" />
+            </Button>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => playSound(sound.koreanExample.word)}
+            >
+              <Volume2 className="h-4 w-4" />
+            </Button>
+          </div>
+
+          <DialogHeader className="pt-6">
             <DialogTitle className="flex gap-6 items-center justify-center text-4xl">
               <div className="flex flex-col items-center">
                 <span>{sound.korean}</span>
@@ -138,15 +179,6 @@ export function SoundCard({ sound, category, isCompact }: SoundCardProps) {
                   </div>
                 </div>
               </div>
-
-              <Button
-                variant="outline"
-                size="sm"
-                className="absolute top-4 right-4"
-                onClick={() => playSound(sound.koreanExample.word)}
-              >
-                <Volume2 className="h-4 w-4" />
-              </Button>
             </div>
           </ScrollArea>
         </DialogContent>
