@@ -109,7 +109,7 @@ export function SearchBar() {
                     {category.sounds.map((sound: SoundMapping) => (
                       <CommandItem
                         key={sound.korean}
-                        value={`${sound.korean} ${sound.romanization} ${sound.malayalamEquivalent} ${sound.koreanExample.word} ${sound.malayalamExample.word}`}
+                        value={`${sound.korean} ${sound.romanization} ${sound.malayalam} ${sound.koreanExample.word} ${sound.malayalamExample.word}`}
                         onSelect={() => {
                           setSelectedSound({
                             sound,
@@ -125,9 +125,7 @@ export function SearchBar() {
                           <span className="text-muted-foreground">
                             {sound.romanization}
                           </span>
-                          <span className="text-lg">
-                            {sound.malayalamEquivalent}
-                          </span>
+                          <span className="text-lg">{sound.malayalam}</span>
                         </div>
                       </CommandItem>
                     ))}
@@ -143,7 +141,7 @@ export function SearchBar() {
                   {data.sounds.map((sound: SoundMapping) => (
                     <CommandItem
                       key={sound.korean}
-                      value={`${sound.korean} ${sound.romanization} ${sound.malayalamEquivalent} ${sound.koreanExample.word} ${sound.malayalamExample.word}`}
+                      value={`${sound.korean} ${sound.romanization} ${sound.malayalam} ${sound.koreanExample.word} ${sound.malayalamExample.word}`}
                       onSelect={() => {
                         setSelectedSound({
                           sound,
@@ -159,9 +157,7 @@ export function SearchBar() {
                         <span className="text-muted-foreground">
                           {sound.romanization}
                         </span>
-                        <span className="text-lg">
-                          {sound.malayalamEquivalent}
-                        </span>
+                        <span className="text-lg">{sound.malayalam}</span>
                       </div>
                     </CommandItem>
                   ))}

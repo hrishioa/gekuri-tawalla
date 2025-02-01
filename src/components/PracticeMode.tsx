@@ -224,7 +224,7 @@ export function PracticeMode() {
                           <div className="flex justify-center items-center gap-4">
                             <Badge variant="outline">Malayalam</Badge>
                             <span className="text-2xl">
-                              {currentSound?.malayalamEquivalent}
+                              {currentSound?.malayalam}
                             </span>
                           </div>
                           <div className="pt-4">

@@ -127,9 +127,11 @@ export function SoundCard({ sound, category }: SoundCardProps) {
 
           <ScrollArea className="max-h-[70vh] sm:max-h-[60vh]">
             <div className="space-y-6">
-              {sound.notes && (
+              {sound.malayalamNote && (
                 <div className="bg-muted/50 rounded-lg p-4">
-                  <p className="text-sm text-muted-foreground">{sound.notes}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {sound.malayalamNote}
+                  </p>
                 </div>
               )}
 
