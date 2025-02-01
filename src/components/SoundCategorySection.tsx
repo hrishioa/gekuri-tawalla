@@ -3,17 +3,16 @@
 import { SoundCategory } from "@/types/korean-malayalam";
 import { Card } from "@/components/ui/card";
 import { SoundCard } from "@/components/SoundCard";
+import { categoryColors } from "@/lib/categoryColors";
 
 interface SoundCategorySectionProps {
   category: SoundCategory;
-  categoryType: string;
-  isGridView?: boolean;
+  categoryType: keyof typeof categoryColors;
 }
 
 export function SoundCategorySection({
   category,
   categoryType,
-  isGridView = true,
 }: SoundCategorySectionProps) {
   return (
     <Card className="p-6">
@@ -26,20 +25,9 @@ export function SoundCategorySection({
         )}
       </div>
 
-      <div
-        className={
-          isGridView
-            ? "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3"
-            : "space-y-2"
-        }
-      >
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-3">
         {category.sounds.map((sound) => (
-          <SoundCard
-            key={sound.korean}
-            sound={sound}
-            category={categoryType as any}
-            isCompact={!isGridView}
-          />
+          <SoundCard key={sound.korean} sound={sound} category={categoryType} />
         ))}
       </div>
     </Card>

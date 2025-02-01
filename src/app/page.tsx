@@ -3,8 +3,6 @@
 import { useState, useEffect } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { SoundCategorySection } from "@/components/SoundCategorySection";
-import { ViewToggle } from "@/components/ViewToggle";
-import { soundData } from "@/data/sound-mappings";
 import { SearchBar } from "@/components/SearchBar";
 import { PracticeMode } from "@/components/PracticeMode";
 import { Card } from "@/components/ui/card";
@@ -13,9 +11,10 @@ import { Star } from "lucide-react";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { KeyboardShortcuts } from "@/components/KeyboardShortcuts";
 import { HelpButton } from "@/components/HelpButton";
+import { soundData } from "@/data/sound-mappings";
+import { SoundMapping } from "@/types/korean-malayalam";
 
 export default function Home() {
-  const [isGridView, setIsGridView] = useState(true);
   const [favorites, setFavorites] = useState<SoundMapping[]>([]);
 
   useEffect(() => {
@@ -26,36 +25,43 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-muted/50">
+    <div className="min-h-screen bg-gradient-to-br from-muted/50 via-background to-muted/50">
       <KeyboardShortcuts />
-      <header className="border-b bg-background">
-        <div className="container px-4 py-8">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-            <div>
-              <h1 className="text-3xl font-bold tracking-tight">
-                Korean-Malayalam Sound Guide
-              </h1>
-              <p className="text-muted-foreground mt-2">
-                Learn how Korean sounds map to Malayalam letters with examples
-                and pronunciation guides
-              </p>
-            </div>
-            <div className="flex items-center gap-2">
-              <SearchBar />
-              <PracticeMode />
-              <ThemeToggle />
-              <HelpButton />
-              <ViewToggle isGridView={isGridView} onToggle={setIsGridView} />
-            </div>
-          </div>
-        </div>
-      </header>
 
-      <main className="container px-4 py-8">
-        <Tabs defaultValue="vowels" className="space-y-8">
-          <div className="sticky top-0 z-10 -mx-4 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
-            <div className="container flex overflow-auto">
+      <Tabs defaultValue="vowels">
+        {/* Fixed header */}
+        <div className="sticky top-0 z-20 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b">
+          <div className="container px-4 py-4">
+            {/* Logo and controls */}
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between mb-4">
+              <div>
+                <div className="space-y-1">
+                  <h1 className="text-3xl sm:text-4xl font-bold tracking-tight bg-gradient-to-r from-blue-500 via-violet-500 to-orange-500 bg-clip-text text-transparent">
+                    Hangeul Harmony
+                  </h1>
+                  <p className="text-xs sm:text-sm text-muted-foreground">
+                    Made by Hrishi and Claude 3.5 Sonnet
+                  </p>
+                </div>
+                <p className="text-sm sm:text-base text-muted-foreground mt-2">
+                  Learn Korean sounds through Malayalam equivalents with an
+                  intuitive sound mapping guide
+                </p>
+              </div>
+              <div className="flex items-center gap-2">
+                <SearchBar />
+                <PracticeMode />
+                <ThemeToggle />
+                <HelpButton />
+              </div>
+            </div>
+
+            {/* Navigation tabs */}
+            <div className="flex overflow-auto">
               <TabsList className="h-12 items-center justify-start">
+                <TabsTrigger value="all" className="text-base">
+                  All
+                </TabsTrigger>
                 <TabsTrigger value="vowels" className="text-base">
                   Vowels
                 </TabsTrigger>
@@ -74,12 +80,37 @@ export default function Home() {
               </TabsList>
             </div>
           </div>
+        </div>
+
+        {/* Main content */}
+        <main className="container px-4 py-8">
+          <TabsContent value="all" className="space-y-8">
+            <SoundCategorySection
+              category={soundData.vowels}
+              categoryType="vowels"
+            />
+            <SoundCategorySection
+              category={soundData.doubleVowels}
+              categoryType="doubleVowels"
+            />
+            <SoundCategorySection
+              category={soundData.consonants.plain}
+              categoryType="plain"
+            />
+            <SoundCategorySection
+              category={soundData.consonants.aspirated}
+              categoryType="aspirated"
+            />
+            <SoundCategorySection
+              category={soundData.consonants.tense}
+              categoryType="tense"
+            />
+          </TabsContent>
 
           <TabsContent value="vowels" className="mt-8">
             <SoundCategorySection
               category={soundData.vowels}
               categoryType="vowels"
-              isGridView={isGridView}
             />
           </TabsContent>
 
@@ -87,7 +118,6 @@ export default function Home() {
             <SoundCategorySection
               category={soundData.doubleVowels}
               categoryType="doubleVowels"
-              isGridView={isGridView}
             />
           </TabsContent>
 
@@ -95,17 +125,14 @@ export default function Home() {
             <SoundCategorySection
               category={soundData.consonants.plain}
               categoryType="plain"
-              isGridView={isGridView}
             />
             <SoundCategorySection
               category={soundData.consonants.aspirated}
               categoryType="aspirated"
-              isGridView={isGridView}
             />
             <SoundCategorySection
               category={soundData.consonants.tense}
               categoryType="tense"
-              isGridView={isGridView}
             />
           </TabsContent>
 
@@ -118,26 +145,19 @@ export default function Home() {
                 </p>
               </div>
 
-              <div
-                className={
-                  isGridView
-                    ? "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3"
-                    : "space-y-2"
-                }
-              >
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
                 {favorites.map((sound) => (
                   <SoundCard
                     key={sound.korean}
                     sound={sound}
                     category="vowels"
-                    isCompact={!isGridView}
                   />
                 ))}
               </div>
             </Card>
           </TabsContent>
-        </Tabs>
-      </main>
+        </main>
+      </Tabs>
     </div>
   );
 }

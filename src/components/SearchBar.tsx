@@ -14,8 +14,14 @@ import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
 import { soundData } from "@/data/sound-mappings";
 import { SoundMapping } from "@/types/korean-malayalam";
-import { Dialog } from "./ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import { SoundCard } from "./SoundCard";
+import { categoryColors, CategoryType } from "@/lib/categoryColors";
 
 // Helper function to get all sounds with their categories
 function getAllSounds() {
@@ -53,7 +59,7 @@ export function SearchBar() {
   const [open, setOpen] = useState(false);
   const [selectedSound, setSelectedSound] = useState<{
     sound: SoundMapping;
-    category: string;
+    category: CategoryType;
   } | null>(null);
   const allSounds = getAllSounds();
 
@@ -76,14 +82,17 @@ export function SearchBar() {
         className="relative h-9 w-full justify-start text-sm text-muted-foreground sm:w-64 sm:pr-12"
         onClick={() => setOpen(true)}
       >
-        <span className="hidden lg:inline-flex">Search sounds...</span>
-        <span className="inline-flex lg:hidden">Search...</span>
+        <Search className="mr-2 h-4 w-4 shrink-0" />
+        <span className="inline-flex">Search...</span>
         <kbd className="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
           <span className="text-xs">⌘</span>K
         </kbd>
       </Button>
 
       <CommandDialog open={open} onOpenChange={setOpen}>
+        <DialogHeader>
+          <DialogTitle className="sr-only">Search Korean Sounds</DialogTitle>
+        </DialogHeader>
         <CommandInput placeholder="Type to search..." />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
@@ -96,7 +105,10 @@ export function SearchBar() {
                       key={sound.korean}
                       value={`${sound.korean} ${sound.romanization} ${sound.malayalamEquivalent} ${sound.koreanExample.word} ${sound.malayalamExample.word}`}
                       onSelect={() => {
-                        setSelectedSound({ sound, category: type });
+                        setSelectedSound({
+                          sound,
+                          category: type as CategoryType,
+                        });
                         setOpen(false);
                       }}
                     >
@@ -124,7 +136,10 @@ export function SearchBar() {
                     key={sound.korean}
                     value={`${sound.korean} ${sound.romanization} ${sound.malayalamEquivalent} ${sound.koreanExample.word} ${sound.malayalamExample.word}`}
                     onSelect={() => {
-                      setSelectedSound({ sound, category: section });
+                      setSelectedSound({
+                        sound,
+                        category: section as CategoryType,
+                      });
                       setOpen(false);
                     }}
                   >
@@ -150,10 +165,17 @@ export function SearchBar() {
           open={selectedSound !== null}
           onOpenChange={() => setSelectedSound(null)}
         >
-          <SoundCard
-            sound={selectedSound.sound}
-            category={selectedSound.category as any}
-          />
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle className="sr-only">
+                Sound Details for {selectedSound.sound.korean}
+              </DialogTitle>
+            </DialogHeader>
+            <SoundCard
+              sound={selectedSound.sound}
+              category={selectedSound.category}
+            />
+          </DialogContent>
         </Dialog>
       )}
     </>

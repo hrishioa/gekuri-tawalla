@@ -19,24 +19,23 @@ import { FavoriteButton } from "./FavoriteButton";
 
 const categoryColors = {
   vowels:
-    "from-blue-500/10 via-blue-500/20 to-blue-500/10 hover:from-blue-500/30 hover:via-blue-500/40 hover:to-blue-500/30",
+    "from-blue-500/20 via-blue-600/30 to-blue-500/20 hover:from-blue-500/40 hover:via-blue-600/50 hover:to-blue-500/40",
   doubleVowels:
-    "from-violet-500/10 via-violet-500/20 to-violet-500/10 hover:from-violet-500/30 hover:via-violet-500/40 hover:to-violet-500/30",
+    "from-violet-500/20 via-violet-600/30 to-violet-500/20 hover:from-violet-500/40 hover:via-violet-600/50 hover:to-violet-500/40",
   plain:
-    "from-green-500/10 via-green-500/20 to-green-500/10 hover:from-green-500/30 hover:via-green-500/40 hover:to-green-500/30",
+    "from-emerald-500/20 via-emerald-600/30 to-emerald-500/20 hover:from-emerald-500/40 hover:via-emerald-600/50 hover:to-emerald-500/40",
   aspirated:
-    "from-orange-500/10 via-orange-500/20 to-orange-500/10 hover:from-orange-500/30 hover:via-orange-500/40 hover:to-orange-500/30",
+    "from-orange-500/20 via-orange-600/30 to-orange-500/20 hover:from-orange-500/40 hover:via-orange-600/50 hover:to-orange-500/40",
   tense:
-    "from-red-500/10 via-red-500/20 to-red-500/10 hover:from-red-500/30 hover:via-red-500/40 hover:to-red-500/30",
+    "from-rose-500/20 via-rose-600/30 to-rose-500/20 hover:from-rose-500/40 hover:via-rose-600/50 hover:to-rose-500/40",
 } as const;
 
 interface SoundCardProps {
   sound: SoundMapping;
   category: keyof typeof categoryColors;
-  isCompact?: boolean;
 }
 
-export function SoundCard({ sound, category, isCompact }: SoundCardProps) {
+export function SoundCard({ sound, category }: SoundCardProps) {
   const [showDetails, setShowDetails] = useState(false);
 
   const playSound = async (text: string) => {
@@ -66,49 +65,33 @@ export function SoundCard({ sound, category, isCompact }: SoundCardProps) {
     }
   };
 
-  if (isCompact) {
-    return (
-      <Card
-        className="group relative overflow-hidden cursor-pointer hover:border-primary/50 transition-colors"
-        onClick={() => setShowDetails(true)}
-      >
-        <div className="p-3 flex items-center gap-4">
-          <div className="text-2xl font-bold">{sound.korean}</div>
-          <div className="flex-1 text-sm">
-            <div className="text-muted-foreground">{sound.romanization}</div>
-            <div>{sound.malayalamEquivalent}</div>
-          </div>
-        </div>
-        <div
-          className={`absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r ${categoryColors[category]}`}
-        />
-        <FavoriteButton sound={sound} />
-      </Card>
-    );
-  }
-
   return (
     <>
       <Card
-        className="group relative overflow-hidden cursor-pointer hover:border-primary/50 transition-colors"
+        className="group relative overflow-hidden cursor-pointer hover:border-primary/50 active:scale-95 transition-all"
         onClick={() => setShowDetails(true)}
       >
-        <div className="p-4 text-center">
-          <div className="text-3xl font-bold mb-1 group-hover:scale-110 transition-transform">
+        <div className="p-3 sm:p-4 text-center space-y-2 sm:space-y-3">
+          <div className="text-3xl sm:text-4xl font-bold mb-1 group-hover:scale-110 transition-transform">
             {sound.korean}
           </div>
-          <div className="text-xs text-muted-foreground">
-            {sound.romanization}
+          <div className="space-y-1">
+            <div className="text-xs sm:text-sm text-muted-foreground">
+              {sound.romanization}
+            </div>
+            <div className="text-lg sm:text-xl">
+              {sound.malayalamEquivalent}
+            </div>
           </div>
         </div>
         <div
-          className={`absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r ${categoryColors[category]}`}
+          className={`absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r ${categoryColors[category]}`}
         />
         <FavoriteButton sound={sound} />
       </Card>
 
       <Dialog open={showDetails} onOpenChange={setShowDetails}>
-        <DialogContent className="sm:max-w-[500px]">
+        <DialogContent className="sm:max-w-[500px] p-4 sm:p-6">
           <div className="flex justify-end gap-2 absolute right-4 top-4">
             <Button
               variant="outline"
@@ -144,7 +127,7 @@ export function SoundCard({ sound, category, isCompact }: SoundCardProps) {
             </DialogTitle>
           </DialogHeader>
 
-          <ScrollArea className="max-h-[60vh]">
+          <ScrollArea className="max-h-[70vh] sm:max-h-[60vh]">
             <div className="space-y-6">
               {sound.notes && (
                 <div className="bg-muted/50 rounded-lg p-4">

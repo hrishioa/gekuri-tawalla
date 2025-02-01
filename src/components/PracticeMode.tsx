@@ -30,8 +30,8 @@ interface PracticeStats {
   lastPracticed: Date;
 }
 
-function getRandomSounds(count: number = 10) {
-  let sounds = [];
+function getRandomSounds(category: Category, difficulty: Difficulty) {
+  const sounds = [];
 
   if (category === "all" || category === "vowels") {
     sounds.push(...soundData.vowels.sounds);
@@ -90,7 +90,7 @@ export function PracticeMode() {
 
   const startNewRound = () => {
     setCurrentRound({
-      sounds: getRandomSounds(),
+      sounds: getRandomSounds(category, difficulty),
       currentIndex: 0,
       score: 0,
       showAnswer: false,
@@ -194,47 +194,50 @@ export function PracticeMode() {
                     {currentRound.sounds.length}
                   </div>
 
-                  <Card className="p-6 text-center space-y-6">
-                    <div className="text-6xl font-bold">
-                      {currentSound?.korean}
-                    </div>
-
-                    {!currentRound.showAnswer ? (
-                      <Button
-                        variant="outline"
-                        onClick={() =>
-                          setCurrentRound({
-                            ...currentRound,
-                            showAnswer: true,
-                          })
-                        }
-                      >
-                        Show Answer
-                      </Button>
-                    ) : (
-                      <div className="space-y-4">
-                        <div className="flex justify-center items-center gap-4">
-                          <Badge variant="outline">Romanization</Badge>
-                          <span className="text-lg">
-                            {currentSound?.romanization}
-                          </span>
-                        </div>
-                        <div className="flex justify-center items-center gap-4">
-                          <Badge variant="outline">Malayalam</Badge>
-                          <span className="text-2xl">
-                            {currentSound?.malayalamEquivalent}
-                          </span>
-                        </div>
-                        <div className="pt-4">
-                          <Button onClick={handleNext}>
-                            {currentRound.currentIndex ===
-                            currentRound.sounds.length - 1
-                              ? "Complete"
-                              : "Next"}
-                          </Button>
-                        </div>
+                  <Card className="p-4 sm:p-6 text-center space-y-4 sm:space-y-6 relative overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-violet-500/5 to-orange-500/5" />
+                    <div className="relative">
+                      <div className="text-5xl sm:text-7xl font-bold mb-4 bg-gradient-to-r from-blue-500 via-violet-500 to-orange-500 bg-clip-text text-transparent">
+                        {currentSound?.korean}
                       </div>
-                    )}
+
+                      {!currentRound.showAnswer ? (
+                        <Button
+                          variant="outline"
+                          onClick={() =>
+                            setCurrentRound({
+                              ...currentRound,
+                              showAnswer: true,
+                            })
+                          }
+                        >
+                          Show Answer
+                        </Button>
+                      ) : (
+                        <div className="space-y-4">
+                          <div className="flex justify-center items-center gap-4">
+                            <Badge variant="outline">Romanization</Badge>
+                            <span className="text-lg">
+                              {currentSound?.romanization}
+                            </span>
+                          </div>
+                          <div className="flex justify-center items-center gap-4">
+                            <Badge variant="outline">Malayalam</Badge>
+                            <span className="text-2xl">
+                              {currentSound?.malayalamEquivalent}
+                            </span>
+                          </div>
+                          <div className="pt-4">
+                            <Button onClick={handleNext}>
+                              {currentRound.currentIndex ===
+                              currentRound.sounds.length - 1
+                                ? "Complete"
+                                : "Next"}
+                            </Button>
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </Card>
                 </div>
               )}
