@@ -1,16 +1,27 @@
 export type SoundExample = {
   word: string;
-  romanization: string;
   meaning: string;
+  transliteration: string;
 };
 
 export type SoundMapping = {
   korean: string;
   romanization: string;
-  malayalamEquivalent: string;
-  koreanExample: SoundExample;
-  malayalamExample: SoundExample;
-  notes?: string;
+  malayalam: string;
+  malayalamNote?: string;
+  koreanExample: {
+    word: string;
+    meaning: string;
+    transliteration: string;
+    malayalamLipi: string;
+  };
+  malayalamExample: {
+    word: string;
+    transliteration: string;
+    hangulTransliteration: string;
+    meaning: string;
+  };
+  type: "vowel" | "double-vowel" | "consonant" | "aspirated" | "tense";
 };
 
 export type SoundCategory = {
@@ -19,12 +30,14 @@ export type SoundCategory = {
   sounds: SoundMapping[];
 };
 
-export type SoundData = {
+export type ConsonantCategories = {
+  plain: SoundCategory;
+  aspirated: SoundCategory;
+  tense: SoundCategory;
+};
+
+export type AllSoundData = {
   vowels: SoundCategory;
   doubleVowels: SoundCategory;
-  consonants: {
-    plain: SoundCategory;
-    aspirated: SoundCategory;
-    tense: SoundCategory;
-  };
+  consonants: ConsonantCategories;
 };

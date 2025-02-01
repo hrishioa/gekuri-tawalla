@@ -1,0 +1,763 @@
+export type KoreanChar = {
+  korean: string;
+  romanization: string;
+  malayalam: string;
+  malayalamNote?: string;
+  koreanExample: {
+    word: string;
+    meaning: string;
+    transliteration: string;
+    malayalamLipi: string;
+  };
+  malayalamExample: {
+    word: string;
+    transliteration: string;
+    hangulTransliteration: string;
+    meaning: string;
+  };
+  type: "vowel" | "double-vowel" | "consonant" | "aspirated" | "tense";
+};
+
+export const koreanData: KoreanChar[] = [
+  // Vowels
+  {
+    korean: "ㅏ",
+    romanization: "a",
+    malayalam: "അ",
+    koreanExample: {
+      word: "아빠",
+      meaning: "dad",
+      transliteration: "appa",
+      malayalamLipi: "അപ്പ",
+    },
+    malayalamExample: {
+      word: "അച്ഛൻ",
+      transliteration: "achchan",
+      hangulTransliteration: "아빠",
+      meaning: "father",
+    },
+    type: "vowel",
+  },
+  {
+    korean: "ㅑ",
+    romanization: "ya",
+    malayalam: "യാ",
+    malayalamNote: 'Malayalam does not use an independent "ya" vowel',
+    koreanExample: {
+      word: "야",
+      meaning: "hey",
+      transliteration: "ya",
+      malayalamLipi: "യാ",
+    },
+    malayalamExample: {
+      word: "യാത്ര",
+      transliteration: "yaathra",
+      hangulTransliteration: "야",
+      meaning: "journey",
+    },
+    type: "vowel",
+  },
+  {
+    korean: "ㅓ",
+    romanization: "eo",
+    malayalam: "ഒ",
+    malayalamNote: "Rough approximation using short 'o'",
+    koreanExample: {
+      word: "어른",
+      meaning: "adult",
+      transliteration: "eoreun",
+      malayalamLipi: "ഒ",
+    },
+    malayalamExample: {
+      word: "ഒരാൾ",
+      transliteration: "oraal",
+      hangulTransliteration: "어른",
+      meaning: "a person",
+    },
+    type: "vowel",
+  },
+  {
+    korean: "ㅕ",
+    romanization: "yeo",
+    malayalam: "യൊ",
+    malayalamNote: "No true equivalent; using a combination approximation",
+    koreanExample: {
+      word: "여자",
+      meaning: "woman",
+      transliteration: "yeoja",
+      malayalamLipi: "യൊ",
+    },
+    malayalamExample: {
+      word: "സ്ത്രീ",
+      transliteration: "sthree",
+      hangulTransliteration: "여자",
+      meaning: "woman",
+    },
+    type: "vowel",
+  },
+  {
+    korean: "ㅗ",
+    romanization: "o",
+    malayalam: "ഒ/ഓ",
+    koreanExample: {
+      word: "오리",
+      meaning: "duck",
+      transliteration: "ori",
+      malayalamLipi: "ഒ/ഓ",
+    },
+    malayalamExample: {
+      word: "ഒന്ന്",
+      transliteration: "onnu",
+      hangulTransliteration: "오리",
+      meaning: "one",
+    },
+    type: "vowel",
+  },
+  {
+    korean: "ㅛ",
+    romanization: "yo",
+    malayalam: "യോ",
+    koreanExample: {
+      word: "요리",
+      meaning: "cooking",
+      transliteration: "yori",
+      malayalamLipi: "യോ",
+    },
+    malayalamExample: {
+      word: "യോഗ",
+      transliteration: "yoga",
+      hangulTransliteration: "요리",
+      meaning: "yoga",
+    },
+    type: "vowel",
+  },
+  {
+    korean: "ㅜ",
+    romanization: "u",
+    malayalam: "ഉ",
+    koreanExample: {
+      word: "우유",
+      meaning: "milk",
+      transliteration: "uyu",
+      malayalamLipi: "ഉ",
+    },
+    malayalamExample: {
+      word: "ഉപ്പ്",
+      transliteration: "uppu",
+      hangulTransliteration: "우유",
+      meaning: "salt",
+    },
+    type: "vowel",
+  },
+  {
+    korean: "ㅠ",
+    romanization: "yu",
+    malayalam: "യൂ",
+    koreanExample: {
+      word: "유리",
+      meaning: "glass",
+      transliteration: "yuri",
+      malayalamLipi: "യൂ",
+    },
+    malayalamExample: {
+      word: "യുവന",
+      transliteration: "yuvaav",
+      hangulTransliteration: "유리",
+      meaning: "young man",
+    },
+    type: "vowel",
+  },
+  {
+    korean: "ㅡ",
+    romanization: "eu",
+    malayalam: "–",
+    malayalamNote: "No equivalent; using inherent vowel sound",
+    koreanExample: {
+      word: "음악",
+      meaning: "music",
+      transliteration: "eumak",
+      malayalamLipi: "–",
+    },
+    malayalamExample: {
+      word: "സംഗീതം",
+      transliteration: "sangeetham",
+      hangulTransliteration: "음악",
+      meaning: "music",
+    },
+    type: "vowel",
+  },
+  {
+    korean: "ㅣ",
+    romanization: "i",
+    malayalam: "ഇ",
+    koreanExample: {
+      word: "이름",
+      meaning: "name",
+      transliteration: "ireum",
+      malayalamLipi: "ഇ",
+    },
+    malayalamExample: {
+      word: "ഇടം",
+      transliteration: "idam",
+      hangulTransliteration: "이름",
+      meaning: "place",
+    },
+    type: "vowel",
+  },
+  {
+    korean: "ㅐ",
+    romanization: "ae",
+    malayalam: "എ",
+    malayalamNote: "Approximation using 'e' vowel",
+    koreanExample: {
+      word: "애인",
+      meaning: "lover",
+      transliteration: "aein",
+      malayalamLipi: "എ",
+    },
+    malayalamExample: {
+      word: "എനിക്ക്",
+      transliteration: "enikku",
+      hangulTransliteration: "애인",
+      meaning: "to me",
+    },
+    type: "vowel",
+  },
+  {
+    korean: "ㅒ",
+    romanization: "yae",
+    malayalam: "യെ",
+    malayalamNote: "Non-standard combination",
+    koreanExample: {
+      word: "얘",
+      meaning: "kid",
+      transliteration: "yae",
+      malayalamLipi: "യെ",
+    },
+    malayalamExample: {
+      word: "അനുപമ",
+      transliteration: "anupama",
+      hangulTransliteration: "얘",
+      meaning: "unique (as an adjective)",
+    },
+    type: "vowel",
+  },
+  {
+    korean: "ㅔ",
+    romanization: "e",
+    malayalam: "എ",
+    koreanExample: {
+      word: "세상",
+      meaning: "world",
+      transliteration: "sesang",
+      malayalamLipi: "എ",
+    },
+    malayalamExample: {
+      word: "എല്ലാം",
+      transliteration: "ellaam",
+      hangulTransliteration: "세상",
+      meaning: "all",
+    },
+    type: "vowel",
+  },
+  {
+    korean: "ㅖ",
+    romanization: "ye",
+    malayalam: "യേ",
+    koreanExample: {
+      word: "예술",
+      meaning: "art",
+      transliteration: "yesul",
+      malayalamLipi: "യേ",
+    },
+    malayalamExample: {
+      word: "കല",
+      transliteration: "kala",
+      hangulTransliteration: "예술",
+      meaning: "art",
+    },
+    type: "vowel",
+  },
+
+  // Double Vowels
+  {
+    korean: "ㅘ",
+    romanization: "wa",
+    malayalam: "വ",
+    malayalamNote: "Using 'va' for 'wa' sound",
+    koreanExample: {
+      word: "과일",
+      meaning: "fruit",
+      transliteration: "gwail",
+      malayalamLipi: "വ",
+    },
+    malayalamExample: {
+      word: "വാതില്‍",
+      transliteration: "vaathil",
+      hangulTransliteration: "과일",
+      meaning: "door",
+    },
+    type: "double-vowel",
+  },
+  {
+    korean: "ㅝ",
+    romanization: "wo",
+    malayalam: "വോ",
+    malayalamNote: "Approximate transliteration",
+    koreanExample: {
+      word: "원",
+      meaning: "won (currency)",
+      transliteration: "won",
+      malayalamLipi: "വോ",
+    },
+    malayalamExample: {
+      word: "വോയ്സ്",
+      transliteration: "voice",
+      hangulTransliteration: "원",
+      meaning: "approximation",
+    },
+    type: "double-vowel",
+  },
+  {
+    korean: "ㅙ",
+    romanization: "wae",
+    malayalam: "വൈ",
+    malayalamNote: "Diphthong approximation",
+    koreanExample: {
+      word: "왜",
+      meaning: "why",
+      transliteration: "wae",
+      malayalamLipi: "വൈ",
+    },
+    malayalamExample: {
+      word: "വൈ",
+      transliteration: "vai",
+      hangulTransliteration: "왜",
+      meaning: "diphthong approximation",
+    },
+    type: "double-vowel",
+  },
+  {
+    korean: "ㅞ",
+    romanization: "we",
+    malayalam: "വെ",
+    koreanExample: {
+      word: "웨이터",
+      meaning: "waiter",
+      transliteration: "weiteo",
+      malayalamLipi: "വെ",
+    },
+    malayalamExample: {
+      word: "വെള്ളം",
+      transliteration: "vellam",
+      hangulTransliteration: "웨이터",
+      meaning: "water",
+    },
+    type: "double-vowel",
+  },
+  {
+    korean: "ㅚ",
+    romanization: "oe",
+    malayalam: "ഒയ",
+    malayalamNote: "Combination approximation",
+    koreanExample: {
+      word: "외국",
+      meaning: "foreign",
+      transliteration: "oeguk",
+      malayalamLipi: "ഒയ",
+    },
+    malayalamExample: {
+      word: "ഒയ",
+      transliteration: "oy",
+      hangulTransliteration: "외국",
+      meaning: "foreign",
+    },
+    type: "double-vowel",
+  },
+  {
+    korean: "ㅟ",
+    romanization: "wi",
+    malayalam: "വി",
+    koreanExample: {
+      word: "위",
+      meaning: "above",
+      transliteration: "wi",
+      malayalamLipi: "വി",
+    },
+    malayalamExample: {
+      word: "വിഷു",
+      transliteration: "vishu",
+      hangulTransliteration: "위",
+      meaning: "Vishu (festival)",
+    },
+    type: "double-vowel",
+  },
+  {
+    korean: "ㅢ",
+    romanization: "ui",
+    malayalam: "ഉയ്",
+    malayalamNote: "Notational aid only",
+    koreanExample: {
+      word: "의자",
+      meaning: "chair",
+      transliteration: "uija",
+      malayalamLipi: "ഉയ്",
+    },
+    malayalamExample: {
+      word: "ഉയർ",
+      transliteration: "uayr",
+      hangulTransliteration: "의자",
+      meaning: "height",
+    },
+    type: "double-vowel",
+  },
+
+  // Consonants
+  {
+    korean: "ㄱ",
+    romanization: "g",
+    malayalam: "ക",
+    koreanExample: {
+      word: "가",
+      meaning: "song",
+      transliteration: "ga",
+      malayalamLipi: "ക",
+    },
+    malayalamExample: {
+      word: "കമലം",
+      transliteration: "kamalam",
+      hangulTransliteration: "가",
+      meaning: "lotus",
+    },
+    type: "consonant",
+  },
+  {
+    korean: "ㄷ",
+    romanization: "d/t",
+    malayalam: "ദ",
+    koreanExample: {
+      word: "다리",
+      meaning: "bridge",
+      transliteration: "dari",
+      malayalamLipi: "ദ",
+    },
+    malayalamExample: {
+      word: "ദർശനം",
+      transliteration: "darshanam",
+      hangulTransliteration: "다리",
+      meaning: "vision",
+    },
+    type: "consonant",
+  },
+  {
+    korean: "ㅈ",
+    romanization: "j",
+    malayalam: "ജ",
+    koreanExample: {
+      word: "자다",
+      meaning: "sleep",
+      transliteration: "jada",
+      malayalamLipi: "ജ",
+    },
+    malayalamExample: {
+      word: "ജലം",
+      transliteration: "jalam",
+      hangulTransliteration: "자다",
+      meaning: "water",
+    },
+    type: "consonant",
+  },
+  {
+    korean: "ㅂ",
+    romanization: "b/p",
+    malayalam: "ബ",
+    koreanExample: {
+      word: "바다",
+      meaning: "sea",
+      transliteration: "bada",
+      malayalamLipi: "ബ",
+    },
+    malayalamExample: {
+      word: "ബാലന്",
+      transliteration: "baalan",
+      hangulTransliteration: "바다",
+      meaning: "child",
+    },
+    type: "consonant",
+  },
+  {
+    korean: "ㅇ",
+    romanization: "ng",
+    malayalam: "ങ",
+    koreanExample: {
+      word: "방",
+      meaning: "room",
+      transliteration: "bang",
+      malayalamLipi: "ങ",
+    },
+    malayalamExample: {
+      word: "അങ്ങ്",
+      transliteration: "angu",
+      hangulTransliteration: "방",
+      meaning: "there",
+    },
+    type: "consonant",
+  },
+  {
+    korean: "ㄴ",
+    romanization: "n",
+    malayalam: "ന",
+    koreanExample: {
+      word: "나",
+      meaning: "I",
+      transliteration: "na",
+      malayalamLipi: "ന",
+    },
+    malayalamExample: {
+      word: "നട",
+      transliteration: "nada",
+      hangulTransliteration: "나",
+      meaning: "actor",
+    },
+    type: "consonant",
+  },
+  {
+    korean: "ㅅ",
+    romanization: "s",
+    malayalam: "സ",
+    koreanExample: {
+      word: "사과",
+      meaning: "apple",
+      transliteration: "sagwa",
+      malayalamLipi: "സ",
+    },
+    malayalamExample: {
+      word: "സരിത",
+      transliteration: "saritha",
+      hangulTransliteration: "사과",
+      meaning: "river",
+    },
+    type: "consonant",
+  },
+  {
+    korean: "ㅁ",
+    romanization: "m",
+    malayalam: "മ",
+    koreanExample: {
+      word: "마음",
+      meaning: "mind",
+      transliteration: "maeum",
+      malayalamLipi: "മ",
+    },
+    malayalamExample: {
+      word: "മരം",
+      transliteration: "maram",
+      hangulTransliteration: "마음",
+      meaning: "tree",
+    },
+    type: "consonant",
+  },
+  {
+    korean: "ㅎ",
+    romanization: "h",
+    malayalam: "ഹ",
+    koreanExample: {
+      word: "하늘",
+      meaning: "sky",
+      transliteration: "haneul",
+      malayalamLipi: "ഹ",
+    },
+    malayalamExample: {
+      word: "ഹരി",
+      transliteration: "hari",
+      hangulTransliteration: "하늘",
+      meaning: "Hari",
+    },
+    type: "consonant",
+  },
+  {
+    korean: "ㄹ",
+    romanization: "r/l",
+    malayalam: "ല/റ",
+    malayalamNote: "Lateral approximant or trill",
+    koreanExample: {
+      word: "라면",
+      meaning: "ramen",
+      transliteration: "ramyeon",
+      malayalamLipi: "ല/റ",
+    },
+    malayalamExample: {
+      word: "ലക്ഷ്യം",
+      transliteration: "lakshyam",
+      hangulTransliteration: "라면",
+      meaning: "goal",
+    },
+    type: "consonant",
+  },
+
+  // Aspirated Consonants
+  {
+    korean: "ㅋ",
+    romanization: "k",
+    malayalam: "ഖ",
+    koreanExample: {
+      word: "카드",
+      meaning: "card",
+      transliteration: "kadeu",
+      malayalamLipi: "ഖ",
+    },
+    malayalamExample: {
+      word: "ഖടകം",
+      transliteration: "khadakam",
+      hangulTransliteration: "카드",
+      meaning: "thunder",
+    },
+    type: "aspirated",
+  },
+  {
+    korean: "ㅌ",
+    romanization: "t",
+    malayalam: "ത",
+    koreanExample: {
+      word: "타다",
+      meaning: "burn",
+      transliteration: "tada",
+      malayalamLipi: "ത",
+    },
+    malayalamExample: {
+      word: "തപിക്കുക",
+      transliteration: "thapikkuka",
+      hangulTransliteration: "타다",
+      meaning: "to burn",
+    },
+    type: "aspirated",
+  },
+  {
+    korean: "ㅊ",
+    romanization: "ch",
+    malayalam: "ച",
+    koreanExample: {
+      word: "차",
+      meaning: "tea",
+      transliteration: "cha",
+      malayalamLipi: "ച",
+    },
+    malayalamExample: {
+      word: "ചാടി",
+      transliteration: "chaadi",
+      hangulTransliteration: "차",
+      meaning: "jumped",
+    },
+    type: "aspirated",
+  },
+  {
+    korean: "ㅍ",
+    romanization: "p",
+    malayalam: "പ",
+    koreanExample: {
+      word: "파도",
+      meaning: "wave",
+      transliteration: "pado",
+      malayalamLipi: "പ",
+    },
+    malayalamExample: {
+      word: "പാല്",
+      transliteration: "paal",
+      hangulTransliteration: "파도",
+      meaning: "milk",
+    },
+    type: "aspirated",
+  },
+
+  // Tense Consonants
+  {
+    korean: "ㄲ",
+    romanization: "kk",
+    malayalam: "ക്ക",
+    koreanExample: {
+      word: "까만",
+      meaning: "black",
+      transliteration: "kkaman",
+      malayalamLipi: "ക്ക",
+    },
+    malayalamExample: {
+      word: "അন্ধാരം",
+      transliteration: "andharam",
+      hangulTransliteration: "까만",
+      meaning: "dark",
+    },
+    type: "tense",
+  },
+  {
+    korean: "ㄸ",
+    romanization: "tt",
+    malayalam: "ട്ട",
+    koreanExample: {
+      word: "따뜻하다",
+      meaning: "warm",
+      transliteration: "ttatteuthada",
+      malayalamLipi: "ട്ട",
+    },
+    malayalamExample: {
+      word: "പട്ട",
+      transliteration: "patta",
+      hangulTransliteration: "따뜻하다",
+      meaning: "leather",
+    },
+    type: "tense",
+  },
+  {
+    korean: "ㅉ",
+    romanization: "jj",
+    malayalam: "ജ്ജ",
+    koreanExample: {
+      word: "짜다",
+      meaning: "salty",
+      transliteration: "jjada",
+      malayalamLipi: "ജ്ജ",
+    },
+    malayalamExample: {
+      word: "ഉപ്പുറി",
+      transliteration: "uppuri",
+      hangulTransliteration: "짜다",
+      meaning: "salty (intensified)",
+    },
+    type: "tense",
+  },
+  {
+    korean: "ㅃ",
+    romanization: "pp",
+    malayalam: "ബ്ബ",
+    koreanExample: {
+      word: "빨리",
+      meaning: "quickly",
+      transliteration: "ppalli",
+      malayalamLipi: "ബ്ബ",
+    },
+    malayalamExample: {
+      word: "വേഗം",
+      transliteration: "vegam",
+      hangulTransliteration: "빨리",
+      meaning: "speed",
+    },
+    type: "tense",
+  },
+  {
+    korean: "ㅆ",
+    romanization: "ss",
+    malayalam: "സ്സ",
+    koreanExample: {
+      word: "싸다",
+      meaning: "cheap",
+      transliteration: "ssada",
+      malayalamLipi: "സ്സ",
+    },
+    malayalamExample: {
+      word: "ചെല്ല്",
+      transliteration: "chell",
+      hangulTransliteration: "싸다",
+      meaning: "affordable",
+    },
+    type: "tense",
+  },
+];

@@ -49,7 +49,7 @@ export function SoundCard({ sound, category }: SoundCardProps) {
   };
 
   const shareSound = async () => {
-    const shareText = `Learn Korean-Malayalam: "${sound.korean}" (${sound.romanization}) maps to "${sound.malayalamEquivalent}" in Malayalam.`;
+    const shareText = `Learn Korean-Malayalam: "${sound.korean}" (${sound.romanization}) maps to "${sound.malayalam}" in Malayalam.`;
 
     if (navigator.share) {
       try {
@@ -79,9 +79,7 @@ export function SoundCard({ sound, category }: SoundCardProps) {
             <div className="text-xs sm:text-sm text-muted-foreground">
               {sound.romanization}
             </div>
-            <div className="text-lg sm:text-xl">
-              {sound.malayalamEquivalent}
-            </div>
+            <div className="text-lg sm:text-xl">{sound.malayalam}</div>
           </div>
         </div>
         <div
@@ -122,7 +120,7 @@ export function SoundCard({ sound, category }: SoundCardProps) {
               </div>
               <span className="text-muted-foreground">→</span>
               <div className="flex flex-col items-center">
-                <span>{sound.malayalamEquivalent}</span>
+                <span>{sound.malayalam}</span>
               </div>
             </DialogTitle>
           </DialogHeader>
@@ -141,7 +139,7 @@ export function SoundCard({ sound, category }: SoundCardProps) {
                   <div className="space-y-1.5">
                     <p className="text-xl">{sound.koreanExample.word}</p>
                     <p className="text-sm text-muted-foreground">
-                      {sound.koreanExample.romanization}
+                      {sound.koreanExample.malayalamLipi}
                     </p>
                     <p className="text-sm text-muted-foreground italic">
                       "{sound.koreanExample.meaning}"
@@ -154,7 +152,7 @@ export function SoundCard({ sound, category }: SoundCardProps) {
                   <div className="space-y-1.5">
                     <p className="text-xl">{sound.malayalamExample.word}</p>
                     <p className="text-sm text-muted-foreground">
-                      {sound.malayalamExample.romanization}
+                      {sound.malayalamExample.hangulTransliteration}
                     </p>
                     <p className="text-sm text-muted-foreground italic">
                       "{sound.malayalamExample.meaning}"
