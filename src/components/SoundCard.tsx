@@ -13,6 +13,7 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Volume2 } from "lucide-react";
 
 const categoryColors = {
   vowels:
@@ -35,6 +36,16 @@ interface SoundCardProps {
 
 export function SoundCard({ sound, category, isCompact }: SoundCardProps) {
   const [showDetails, setShowDetails] = useState(false);
+
+  const playSound = async (text: string) => {
+    try {
+      const speech = new SpeechSynthesisUtterance(text);
+      speech.lang = "ko-KR";
+      window.speechSynthesis.speak(speech);
+    } catch (error) {
+      console.error("Speech synthesis not supported");
+    }
+  };
 
   if (isCompact) {
     return (
@@ -127,6 +138,15 @@ export function SoundCard({ sound, category, isCompact }: SoundCardProps) {
                   </div>
                 </div>
               </div>
+
+              <Button
+                variant="outline"
+                size="sm"
+                className="absolute top-4 right-4"
+                onClick={() => playSound(sound.koreanExample.word)}
+              >
+                <Volume2 className="h-4 w-4" />
+              </Button>
             </div>
           </ScrollArea>
         </DialogContent>

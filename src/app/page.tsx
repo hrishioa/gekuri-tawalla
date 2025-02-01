@@ -6,6 +6,7 @@ import { SoundCategorySection } from "@/components/SoundCategorySection";
 import { ViewToggle } from "@/components/ViewToggle";
 import { soundData } from "@/data/sound-mappings";
 import { SearchBar } from "@/components/SearchBar";
+import { PracticeMode } from "@/components/PracticeMode";
 
 export default function Home() {
   const [isGridView, setIsGridView] = useState(true);
@@ -26,6 +27,7 @@ export default function Home() {
             </div>
             <div className="flex items-center gap-2">
               <SearchBar />
+              <PracticeMode />
               <ViewToggle isGridView={isGridView} onToggle={setIsGridView} />
             </div>
           </div>
