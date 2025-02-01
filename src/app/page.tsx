@@ -37,7 +37,7 @@ export default function Home() {
               <div>
                 <div className="space-y-1">
                   <h1 className="text-3xl sm:text-4xl font-bold tracking-tight bg-gradient-to-r from-blue-500 via-violet-500 to-orange-500 bg-clip-text text-transparent">
-                    ഗേകുറി 타왈라
+                    ഗേഗുലി타왈라
                   </h1>
                   <p className="text-lg font-medium text-muted-foreground">
                     A Froggy Guide to Korean-Malayalam Sounds
